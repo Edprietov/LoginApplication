@@ -14,6 +14,7 @@ public class Usuario {
     
     private String nombre;
     private String password;
+    private String passwordv;
     
     
     public Usuario(){
@@ -35,4 +36,15 @@ public class Usuario {
          public void setPassword(String password){
         this.password = password;
     }
+         
+                 public String getPasswordv(){
+        return passwordv;
+    }
+        
+         public void setPasswordv(String passwordv){
+        this.passwordv = passwordv;
+    }
 }
+
+
+
