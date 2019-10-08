@@ -118,6 +118,15 @@ public class TestLogin {
          
     }
     
+     @Test
+    public void testNombre(){
+        Usuario u = new Usuario();
+        u.setNombre("Henry");
+        u.setPassword("12345");
+        assertEquals(validarLogin.verificarLogin(u), DATOS_INCORRECTOS);
+         
+    }
+    
       @Test
     public void testDatos(){
         Usuario u = new Usuario();
