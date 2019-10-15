@@ -9,6 +9,7 @@ package Control;
 import Entidad.Usuario;
 import Entidad.Sistema;
 import Frontera.FramePrincipal;
+import DAO.usuarioDAO;
 
 
 
@@ -21,7 +22,7 @@ import Frontera.FramePrincipal;
 public class ValidarLogin {
     
     
-    private Sistema sistema = FramePrincipal.sistema;
+    private usuarioDAO dao = new usuarioDAO();
     public ValidarLogin(){
         
         
@@ -36,12 +37,15 @@ public class ValidarLogin {
             return ("Longitud contraseña incorrecta");
        
     }
-            for(Usuario u: sistema.getUsuarios()){
+            /*for(Usuario u: sistema.getUsuarios()){
                 if(u.getNombre().equals(usuario.getNombre())&& u.getPassword().equals(usuario.getPassword()))
                 {
                     return ("Bienvenido");
                 }
-            }
+            }*/
+            if(dao.leer(usuario) != null){
+               return ("Bienvenido");
+        }
             return ("Datos incorrectos");
         }
             public boolean ValidarLongitudNombre(String nombre){
